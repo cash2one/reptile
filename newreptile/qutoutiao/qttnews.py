@@ -49,5 +49,5 @@ for index in range(1, 100):
                         txt.write('\n')
         except Exception as e:
             print(e)
-    time.sleeep(5)
+    time.sleep(5)
     print(F'趣头条 新闻爬虫 {index}    页完成！')
