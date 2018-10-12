@@ -12,7 +12,7 @@ def makedirs(path,*paths):
     for pa in paths:
         temp+='/'
         temp+=pa
-    path = F'/home/shuchengqu/pachong/{path}/{datetime.datetime.now().strftime("%m%d")}/{temp}'
+    path = F'{os.environ["HOME"]}/pachong/{path}/{datetime.datetime.now().strftime("%m%d")}/{temp}'
     if os.path.exists(path) == False:
         os.makedirs(path)
     return path

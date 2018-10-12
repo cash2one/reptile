@@ -5,6 +5,7 @@
       <option name="ignoredIdentifiers">
         <list>
           <option value="newreptile.xigua.xgupload.requests_toolbelt" />
+          <option value="lxml.etree" />
         </list>
       </option>
     </inspection_tool>
