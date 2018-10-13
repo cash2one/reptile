@@ -43,9 +43,9 @@ for index in range(1, 100):
                 if len(src) > 0:
                     txt.append(src[0])
                     txt.append('\n')
-            path = F'{path}/{title}.txt'
-            savenews(path,''.join(txt))
-            upload_news(path)
+            news_path = F'{path}/{title}.txt'
+            savenews(news_path,''.join(txt))
+            upload_news(news_path)
         except Exception as e:
             print(e)
     time.sleep(5)
