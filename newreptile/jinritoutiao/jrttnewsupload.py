@@ -147,7 +147,7 @@ def upload_news(path):
             'pgc_feed_covers': '[]',
             'need_pay': '0',
             'from_diagnosis': '0',
-            'save': '0'}
+            'save': '1'}
         result = requests.post(url, data=param, headers=headers, verify=False).content.decode('utf-8')
         print(result)
 
