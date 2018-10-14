@@ -5,10 +5,12 @@
 
 import requests
 
-def save(path,url):
+
+def save(path, url):
     with open(path, 'wb') as mp4:
         mp4.write(requests.get(url).content)
 
-def savenews(path,content):
+
+def savenews(path, content):
     with open(path, 'w') as txt:
         txt.write(content)

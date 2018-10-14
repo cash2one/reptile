@@ -102,7 +102,8 @@ def upload(name_path):
                 boundary='----WebKitFormBoundary' + str(random.randint(1e28, 1e29 - 1))
             )
             up_headers['Content-Type'] = multipart_encoder.content_type
-            up_part = requests.post(upload_url, data=multipart_encoder, headers=up_headers, verify=False).content.decode(
+            up_part = requests.post(upload_url, data=multipart_encoder, headers=up_headers,
+                                    verify=False).content.decode(
                 'utf-8')
             print(up_part)
             time.sleep(20)
@@ -120,7 +121,8 @@ def upload(name_path):
                      'tag': 'video_funny', 'extern_link': '', 'is_fans_article': '0', 'content': consss,
                      'add_third_title': '0',
                      'timer_status': '0',
-                     'timer_time': f'{datetime.datetime.now().strftime("%Y-%m-%d %H:%m")}', 'recommend_auto_analyse': '0',
+                     'timer_time': f'{datetime.datetime.now().strftime("%Y-%m-%d %H:%m")}',
+                     'recommend_auto_analyse': '0',
                      'govern_forward': '0', 'gov_forward_group_id': '-1', 'activity_tag': '0', 'column_selected': '',
                      'compass_video_id': '',
                      'compass_video_name': '', 'compass_video_type': '', 'article_label': '奇闻;恶搞;逗比;笑喷了',
@@ -130,3 +132,60 @@ def upload(name_path):
             print(ddd)
         except Exception as e:
             print(e)
+
+
+def uploadBr(tag,name, file):
+    print(name)
+    try:
+        md5 = hashlib.md5()
+        md5.update(file)
+        md5 = md5.hexdigest()
+        md5_check = f'https://mp.toutiao.com/video/video_uniq_api/?md5={md5}'
+        md5_content = requests.get(md5_check, headers=md5_headers, verify=False).content.decode('utf-8')
+        is_uniq = json.loads(md5_content)['is_uniq']
+        if not is_uniq:
+            return
+        params = {'json_data': '{"api":"chunk_upload_info"}'}
+        content = requests.post(url, data=params, headers=headers, verify=False).content.decode('utf-8')
+        print(content)
+        up_date = json.loads(json.loads(content)['data'])
+        upload_id = up_date['upload_id']
+        upload_url = up_date['upload_url'].replace('http', 'https')
+        lens = len(file)
+        requests.options(upload_url, headers=op_headers, verify=False)
+        up_headers['Content-Range'] = f'bytes 0-{lens-1}/{lens}'
+        multipart_encoder = MultipartEncoder(
+            fields={
+                'video_file': (name, file, 'application/octet-stream')
+            },
+            boundary='----WebKitFormBoundary' + str(random.randint(1e28, 1e29 - 1))
+        )
+        up_headers['Content-Type'] = multipart_encoder.content_type
+        up_part = requests.post(upload_url, data=multipart_encoder, headers=up_headers, verify=False).content.decode(
+            'utf-8')
+        print(up_part)
+        time.sleep(20)
+        ll = f'https://mp.toutiao.com/video/video_system_thumb/?vid={upload_id}&item_id='
+        thumb = requests.get(ll, headers=if_headers, verify=False).content.decode('utf-8')
+        tb = json.loads(thumb)['data'][2]
+        consss = '<p>{!-- PGC_VIDEO:{"sp":"toutiao","vid":"%s","vu":"%s","thumb_url":"%s","src_thumb_uri":"%s","vname":"%s"} --}</p>' % (
+            upload_id, upload_id, tb['uri'], tb['src_uri'], name)
+        uuu = 'https://mp.toutiao.com/core/article/edit_article_post/?source=mp&type=purevideo'
+        title = name.replace('.mp4', '')
+        if len(title) > 30:
+            title = title[0:30]
+        param = {'article_ad_type': '3', 'title': f'{title}', 'title_id': '1538976676585_1612724255524878',
+                 'abstract': f'{name}',
+                 'tag': tag, 'extern_link': '', 'is_fans_article': '0', 'content': consss,
+                 'add_third_title': '0',
+                 'timer_status': '0',
+                 'timer_time': f'{datetime.datetime.now().strftime("%Y-%m-%d %H:%m")}', 'recommend_auto_analyse': '0',
+                 'govern_forward': '0', 'gov_forward_group_id': '-1', 'activity_tag': '0', 'column_selected': '',
+                 'compass_video_id': '',
+                 'compass_video_name': '', 'compass_video_type': '', 'article_label': '',
+                 'from_diagnosis': '0',
+                 'article_type': '1', 'praise': '0', 'pgc_debut': '0', 'save': '1'}
+        ddd = requests.post(uuu, data=param, headers=headers, verify=False).content.decode('utf-8')
+        print(ddd)
+    except Exception as e:
+        print(e)
