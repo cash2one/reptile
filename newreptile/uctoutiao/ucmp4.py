@@ -62,7 +62,7 @@ path = makedirs('uc', 'Goman')
 
 driver = webdriver.Chrome()
 
-for index in range(1, 200):
+for index in range(1, 2000):
     for k, v in toutiao.items():
         data = json.loads(requests.get(v).content.decode('utf-8'))['data']
         items = data['items']
