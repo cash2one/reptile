@@ -89,9 +89,8 @@ for index in range(1, 20000):
                     md5 = hashlib.md5()
                     md5.update(requests.get(mp4_src).content)
                     md5 = md5.hexdigest()
-                    save_db(db, md5=md5, title=title, url=mp4_src, cover=article['thumbnails'][0]['url'], play=view_cnt,comment_url=article['cmt_url'], author=article['wm_author']['name'],type=k,author_img=article['wm_author']['author_icon']['url'],data=time.strftime("%Y/%m/%d %H:%M", time.localtime(int(article['grab_time']/1000))))
+                    save_db(db, md5=md5, title=title, url=mp4_src, cover=article['thumbnails'][0]['url'], play=view_cnt,comment_url=article['cmt_url'], author=article['site_logo']['desc'],type=k,author_img=article['site_logo']['img']['url'],data=time.strftime("%Y/%m/%d %H:%M", time.localtime(int(article['grab_time']/1000))))
                 except Exception as e:
                     print(e)
-    time.sleep(30 * 60)
     print(f'UC视频    爬虫第 {index} 页完成')
 closedb(db)
