@@ -3,6 +3,7 @@
 #   @file: ucmp4.py
 #   @Created by shucheng.qu on 2018/10/6
 # UC头条视频  奇趣
+import hashlib
 import json
 
 import requests
@@ -10,6 +11,9 @@ from lxml import etree
 import datetime
 import time
 from urllib.parse import unquote
+
+from db.mysql import getdb, closedb
+from db.videodb import save_db
 from newreptile.utils.dirs import makedirs
 from newreptile.utils.save import save
 from selenium import webdriver
@@ -54,15 +58,15 @@ mingxing = 'http://iflow.uczzd.cn/iflow/api/v1/channel/622726317?app=ucnews-iflo
 # 科技
 keji = 'http://iflow.uczzd.cn/iflow/api/v1/channel/10030?app=ucnews-iflow&recoid=12532911498249819381&ftime=1538791799754&method=new&count=20&no_op=0&auto=0&content_ratio=0&_tm=1539483273797&sign=Kvjenmhzjy0n%2BZHgBdCTcUnSqd2ReftnUCZxt%2FPBNsK%2BCb4R%2BQjPIpwSE3ompIsEPw0%3D&sc=&puser=1&tab=video&uicid=KviA1sVwSNVrHokKYAqzFNDW0%2BSnKSS5ZikBmQpl1U6MAYtvvwpN6PjEF1CKJtvjZJs%3D&uc_param_str=dnnivebichfrmintcpgieiwidsudsvadmeprpf&dn=37016348931-02193660&nn=KvmoP3iY%2fiscv2pyDTljVgW9aWBGHs%2bn5J33OFV%2beQavPQ%3d%3d&ve=3.9.2.392&bi=997&ch=&fr=iphone&mi=iPhone9%2c2&nt=2&pc=KvmV1x3IdVeVUcW4KYHoQ%2f0%2b4%2bELgX3j0LxeHwNQoGBLaEFyhqeiySP3D2pMuhpGaAs%3d&gp=KvmCqv%2fPJN8tcyDic%2bCU4WMjdEY2LbFQyk1U%2bGxpcj1sYA%3d%3d&me=KvlA4a0OFmlREej9Uhw8RvIHvr26EUScdveIfpXANTf%2fHRFc398pbEnFU%2bq9XS95Fso%3d&wf=&ut=KvnEckifrXQ3BPlsuBB1GgUgQEg%2bgWkB09rfM2unYZ3V%2bQ%3d%3d&ai=Kvk%3d&sv=app&ad=&pr=UCNewsApp&pf=195'
 
-toutiao = {'video_film': video, 'video_vehicles': qiche, 'video_music': music, 'video_animals': mengwu,
-           'video_sports': tiyu,
-           'video_gaming': game, 'video_entertainment': mingxing, 'video_life': life, 'video_tech': keji, }
+toutiao = {'yingshi': video, 'qiche': qiche, 'yinyue': music, 'mengwu': mengwu,
+           'tiyu': tiyu,
+           'youxi': game, 'yule': mingxing, 'shenghuo': life, 'keji': keji, }
 
 path = makedirs('uc', 'Goman')
 
 driver = webdriver.Chrome()
-
-for index in range(1, 2000):
+db = getdb()
+for index in range(1, 20000):
     for k, v in toutiao.items():
         data = json.loads(requests.get(v).content.decode('utf-8'))['data']
         items = data['items']
@@ -71,8 +75,8 @@ for index in range(1, 2000):
             zzd_url = article['zzd_url']
             title = article['title']
             view_cnt = article['view_cnt']
-            if view_cnt > 30000:
-                view_cnt = int(view_cnt / 10000)
+            if view_cnt > 10000:
+                # view_cnt = int(view_cnt / 10000)
                 driver.get(zzd_url)
                 time.sleep(3)
                 try:
@@ -81,8 +85,13 @@ for index in range(1, 2000):
                     # name_path = f'{path}/{view_cnt}{title}.mp4'
                     # save(name_path, mp4_src)
                     # upload(name_path)
-                    uploadBr(k, F'{title}.mp4', requests.get(mp4_src).content)
+                    # uploadBr(k, F'{title}.mp4', requests.get(mp4_src).content)
+                    md5 = hashlib.md5()
+                    md5.update(requests.get(mp4_src).content)
+                    md5 = md5.hexdigest()
+                    save_db(db, md5=md5, title=title, url=mp4_src, cover=article['thumbnails'][0]['url'], play=view_cnt,comment_url=article['cmt_url'], author=article['wm_author']['name'],type=k,author_img=article['wm_author']['author_icon']['url'],data=time.strftime("%Y/%m/%d %H:%M", time.localtime(int(article['grab_time']/1000))))
                 except Exception as e:
                     print(e)
-    time.sleep(30*60)
+    time.sleep(30 * 60)
     print(f'UC视频    爬虫第 {index} 页完成')
+closedb(db)
