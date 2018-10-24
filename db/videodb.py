@@ -31,9 +31,8 @@ from db.mysql import getdb, closedb, insert_video
 def save_db(db, title='', intro='', type='', cover='', url='', play=0, comment=0, comment_url='', author='',
             author_img='', data='', md5=''):
     time_flag = int(round(time.time() * 1000))
-    time_flag = int(str(time_flag)[4:13])
     bean = VideoBean()
-    bean.video_number = time_flag * 10 + random.randint(0, 9)
+    bean.video_number = time_flag * 100 + random.randint(10, 99)
     bean.system_time = time_flag
     bean.video_title = title
     bean.video_intro = intro

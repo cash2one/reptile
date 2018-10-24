@@ -28,10 +28,9 @@ from db.mysql import insert_news, getdb, closedb
 def save_db(db, title='', intro='', content='', cover='', url='', play=0, comment=0, comment_url='', type='', author='',
             author_img='', data=''):
     time_flag = int(round(time.time() * 1000))
-    time_flag = int(str(time_flag)[4:13])
     bean = NewsBean()
     bean.system_time = time_flag
-    bean.news_number = time_flag * 10 + random.randint(0, 9)
+    bean.news_number = time_flag * 100 + random.randint(10, 99)
     bean.news_title = title
     bean.news_intro = intro
     bean.news_content = content
