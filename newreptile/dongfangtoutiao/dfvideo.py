@@ -51,5 +51,7 @@ for index in range(1, 20000):
             save_db(db, md5=md5, title=title, url=mp4_src, cover=data['miniimg'][0]['src'], play=play,
                     author=data['source'], type=type,
                     data=data['date'])
-            time.sleep(2)
+            time.sleep(3)
+        print(F'{type} 类型数据完成一页')
+    print(F'第 {index} 页完成')
 closedb(db)

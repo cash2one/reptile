@@ -62,15 +62,11 @@ for index in range(1, 20000):
                 if len(text) > 0:
                     txt.append(text[0])
                     txt.append('\n')
+            print(title + play)
             save_db(db, title=title, type=type, cover=cover_all, content=''.join(txt),
                             url=news_url, play=play, author=data['source'],
                             data=time.strftime("%Y/%m/%d %H:%M", time.localtime(data['ctrtime'] / 1000)))
-            break
-        break
-    break
-
-    # save_db(db, title=title, type=type, cover=cover_all, content=''.join(txt),
-    #                 url=share_url, play=read_count, author=data['nickname'], author_img=data['avatar'],
-    #                 data=time.strftime("%Y/%m/%d %H:%M", time.localtime(data['show_time'])))
-
+            time.sleep(2)
+        print(F'{type} 类型数据完成一页')
+    print(F'第 {index} 页完成')
 closedb(db)
