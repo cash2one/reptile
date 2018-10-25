@@ -26,11 +26,10 @@ from db.mysql import insert_news, getdb, closedb
 
 
 def save_db(db, title='', intro='', content='', cover='', url='', play=0, comment=0, comment_url='', type='', author='',
-            author_img='', data=''):
+            author_img='', data='',source = ''):
     time_flag = int(round(time.time() * 1000))
     bean = NewsBean()
     bean.system_time = time_flag
-    bean.news_number = time_flag * 100 + random.randint(10, 99)
     bean.news_title = title
     bean.news_intro = intro
     bean.news_content = content
@@ -43,6 +42,7 @@ def save_db(db, title='', intro='', content='', cover='', url='', play=0, commen
     bean.news_author = author
     bean.news_author_img = author_img
     bean.news_data = data
+    bean.news_source = source
     insert_news(bean, db)
 
 

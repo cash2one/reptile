@@ -26,7 +26,7 @@ xinliceshi = 'https://api.1sapp.com/content/getListV2?qdata=Q0I1ODYzQUNEMzJEQTUw
 
 
 # type gaoxiao keji tiyu yule lishi junshi sannong meishi qiwen qiche xinlixue youxi redian
-map = {'redian':redian,'keji':keji,'tiyu':tiyu,'lishi':lishi,'junshi':junshi,'sannong':sannong,'qiche':qiche,'xinlixue':xinliceshi,'youxi':youxi}
+map = {'redian':redian,'keji':keji,'tiyu':tiyu,'lishi':lishi,'junshi':junshi,'shehui':sannong,'qiche':qiche,'xinlixue':xinliceshi,'youxi':youxi}
 
 path = makedirs('news', 'qtt')
 db = getdb()
@@ -66,7 +66,7 @@ for index in range(1, 100000):
                     if len(src) > 0:
                         txt.append(src[0])
                         txt.append('\n')
-                save_db(db,title=title,intro=introduction,type=k,cover=cover_all,content=''.join(txt),url=share_url,play=read_count,author=data['nickname'],author_img=data['avatar'],data = time.strftime("%Y/%m/%d %H:%M", time.localtime(data['show_time'])))
+                save_db(db,title=title,intro=introduction,type=k,cover=cover_all,content=''.join(txt),url=share_url,play=read_count,author=data['nickname'],author_img=data['avatar'],data = time.strftime("%Y/%m/%d %H:%M", time.localtime(data['show_time'])),source='qutoutiao')
                 # news_path = F'{path}/{title}.txt'
                 # savenews(news_path,''.join(txt))
                 # upload_news(news_path)

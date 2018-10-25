@@ -28,7 +28,7 @@ youxi = 'https://toutiao.eastday.com/toutiao_h5/RefreshJP?type=youxi&recgid=1540
 
 # type gaoxiao keji tiyu yule lishi junshi sannong meishi qiwen qiche xinlixue youxi redian
 map = {'yule': yule, 'gaoxiao': gaoxiao, 'keji': keji, 'tiyu': tiyu, 'junshi': junshi, 'qiche': qiche, 'youxi': youxi,
-       'sannong': shehui}
+       'shehui': shehui}
 
 db = getdb()
 
@@ -65,7 +65,7 @@ for index in range(1, 20000):
             print(title + play)
             save_db(db, title=title, type=type, cover=cover_all, content=''.join(txt),
                             url=news_url, play=play, author=data['source'],
-                            data=time.strftime("%Y/%m/%d %H:%M", time.localtime(data['ctrtime'] / 1000)))
+                            data=time.strftime("%Y/%m/%d %H:%M", time.localtime(data['ctrtime'] / 1000)),source='dongfangtoutiao')
             time.sleep(2)
         print(F'{type} 类型数据完成一页')
     print(F'第 {index} 页完成')

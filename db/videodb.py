@@ -29,23 +29,23 @@ from db.mysql import getdb, closedb, insert_video
 # +-------------------+
 
 def save_db(db, title='', intro='', type='', cover='', url='', play=0, comment=0, comment_url='', author='',
-            author_img='', data='', md5=''):
+            author_img='', data='', md5='',source = ''):
     time_flag = int(round(time.time() * 1000))
     bean = VideoBean()
-    bean.video_number = time_flag * 100 + random.randint(10, 99)
     bean.system_time = time_flag
     bean.video_title = title
+    bean.video_url = url
     bean.video_intro = intro
     bean.video_cover = cover
-    bean.video_url = url
+    bean.video_type = type
     bean.video_play = play
     bean.video_comment = comment
     bean.video_comment_url = comment_url
-    bean.video_type = type
     bean.video_author = author
     bean.video_author_img = author_img
     bean.video_data = data
     bean.video_md5 = md5
+    bean.video_source = source
     insert_video(bean, db)
 
 

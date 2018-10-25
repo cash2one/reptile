@@ -12,7 +12,6 @@ import time
 from urllib.parse import unquote
 
 from db.mysql import getdb, closedb
-from db.videodb import save_db
 from newreptile.utils.dirs import makedirs
 from newreptile.utils.save import save
 from selenium import webdriver
