@@ -55,6 +55,7 @@ for index in range(1, 100000):
                         cover_all += cc
                         cover_all += ';'
                 news_content = requests.get(share_url).content.decode('utf-8')
+                print(share_url)
                 divs = etree.HTML(news_content).xpath('/html/body/section[1]/div/div[2]/p')
                 txt = []
                 for div in divs:
