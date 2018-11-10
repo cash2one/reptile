@@ -2,25 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="16a73867-8f60-4beb-87a6-c8a6a30a9eed" name="Default Changelist" comment="jinritoutiao news">
-      <change beforePath="" afterPath="$PROJECT_DIR$/api/error.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/api/news/detail/detail1.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/api/video/video1/video1.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/api/video/video_request.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/newreptile/qutoutiao/qttnewsupload.py" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/api/app.py" afterPath="$PROJECT_DIR$/api/app.py" />
-      <change beforePath="$PROJECT_DIR$/api/news/news1/new1.py" afterPath="$PROJECT_DIR$/api/news/news1/new1.py" />
-      <change beforePath="$PROJECT_DIR$/api/news/news_request.py" afterPath="$PROJECT_DIR$/api/news/news_request.py" />
-      <change beforePath="$PROJECT_DIR$/db/dbbean.py" afterPath="$PROJECT_DIR$/db/dbbean.py" />
-      <change beforePath="$PROJECT_DIR$/db/mysql.py" afterPath="$PROJECT_DIR$/db/mysql.py" />
-      <change beforePath="$PROJECT_DIR$/newreptile/qutoutiao/qttmp4.py" afterPath="$PROJECT_DIR$/newreptile/qutoutiao/qttmp4.py" />
       <change beforePath="$PROJECT_DIR$/newreptile/uctoutiao/ucmp4.py" afterPath="$PROJECT_DIR$/newreptile/uctoutiao/ucmp4.py" />
-      <change beforePath="$PROJECT_DIR$/newreptile/uctoutiao/ucnews.py" afterPath="$PROJECT_DIR$/newreptile/uctoutiao/ucnews.py" />
-      <change beforePath="$PROJECT_DIR$/newreptile/utils/save.py" afterPath="$PROJECT_DIR$/newreptile/utils/save.py" />
-      <change beforePath="$PROJECT_DIR$/newreptile/utils/test.py" afterPath="$PROJECT_DIR$/newreptile/utils/test.py" />
-      <change beforePath="$PROJECT_DIR$/newreptile/utils/test2.py" afterPath="$PROJECT_DIR$/newreptile/utils/test2.py" />
-      <change beforePath="$PROJECT_DIR$/newreptile/utils/test3.py" afterPath="$PROJECT_DIR$/newreptile/utils/test3.py" />
-      <change beforePath="$PROJECT_DIR$/newreptile/xigua/xgupload.py" afterPath="$PROJECT_DIR$/newreptile/xigua/xgupload.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -87,8 +70,8 @@
       <file leaf-file-name="ucmp4.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/newreptile/uctoutiao/ucmp4.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="68" column="23" lean-forward="false" selection-start-line="68" selection-start-column="12" selection-end-line="68" selection-end-column="23" />
+            <state relative-caret-position="154">
+              <caret line="83" column="42" lean-forward="true" selection-start-line="83" selection-start-column="42" selection-end-line="83" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -97,7 +80,7 @@
       <file leaf-file-name="xgupload.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/newreptile/xigua/xgupload.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-78">
+            <state relative-caret-position="660">
               <caret line="54" column="20" lean-forward="false" selection-start-line="54" selection-start-column="20" selection-end-line="54" selection-end-column="20" />
               <folding>
                 <element signature="e#104#119#0" expanded="true" />
@@ -109,7 +92,7 @@
       <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/newreptile/utils/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
+            <state relative-caret-position="705">
               <caret line="50" column="0" lean-forward="false" selection-start-line="63" selection-start-column="19" selection-end-line="63" selection-end-column="22" />
               <folding>
                 <element signature="e#100#115#0" expanded="true" />
@@ -173,11 +156,21 @@
       <file leaf-file-name="jrttnewsupload.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/newreptile/jinritoutiao/jrttnewsupload.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2115">
-              <caret line="151" column="21" lean-forward="false" selection-start-line="101" selection-start-column="0" selection-end-line="151" selection-end-column="21" />
+            <state relative-caret-position="2160">
+              <caret line="154" column="4" lean-forward="false" selection-start-line="154" selection-start-column="4" selection-end-line="154" selection-end-column="4" />
               <folding>
                 <element signature="e#112#127#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="qttnews.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/newreptile/qutoutiao/qttnews.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-296">
+              <caret line="28" column="3" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="3" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -632,7 +625,28 @@
       <option name="project" value="LOCAL" />
       <updated>1540547456922</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="jinritoutiao news">
+      <created>1541860560222</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1541860560222</updated>
+    </task>
+    <task id="LOCAL-00019" summary="jinritoutiao news">
+      <created>1541860912939</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1541860912939</updated>
+    </task>
+    <task id="LOCAL-00020" summary="jinritoutiao news">
+      <created>1541861124764</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1541861124764</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TodoView">
@@ -650,11 +664,11 @@
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32965517" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32780084" sideWeight="0.50250894" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21931034" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21931034" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25931033" sideWeight="0.49749103" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15412186" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25931033" sideWeight="0.49749103" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1562724" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297491" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -906,13 +920,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/newreptile/qutoutiao/qttnews.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="57" column="32" lean-forward="false" selection-start-line="57" selection-start-column="32" selection-end-line="57" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/python-skeletons/__builtin__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
@@ -1058,7 +1065,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="141">
           <caret line="118" column="0" lean-forward="false" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1073,16 +1079,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
           <caret line="51" column="36" lean-forward="false" selection-start-line="51" selection-start-column="36" selection-end-line="51" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/newreptile/jinritoutiao/jrttnewsupload.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2115">
-          <caret line="151" column="21" lean-forward="false" selection-start-line="101" selection-start-column="0" selection-end-line="151" selection-end-column="21" />
-          <folding>
-            <element signature="e#112#127#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1144,7 +1140,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/newreptile/utils/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
+        <state relative-caret-position="705">
           <caret line="50" column="0" lean-forward="false" selection-start-line="63" selection-start-column="19" selection-end-line="63" selection-end-column="22" />
           <folding>
             <element signature="e#100#115#0" expanded="true" />
@@ -1154,7 +1150,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/newreptile/xigua/xgupload.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-78">
+        <state relative-caret-position="660">
           <caret line="54" column="20" lean-forward="false" selection-start-line="54" selection-start-column="20" selection-end-line="54" selection-end-column="20" />
           <folding>
             <element signature="e#104#119#0" expanded="true" />
@@ -1162,10 +1158,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/newreptile/jinritoutiao/jrttnewsupload.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2160">
+          <caret line="154" column="4" lean-forward="false" selection-start-line="154" selection-start-column="4" selection-end-line="154" selection-end-column="4" />
+          <folding>
+            <element signature="e#112#127#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/newreptile/qutoutiao/qttnews.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-296">
+          <caret line="28" column="3" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/newreptile/uctoutiao/ucmp4.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="68" column="23" lean-forward="false" selection-start-line="68" selection-start-column="12" selection-end-line="68" selection-end-column="23" />
+        <state relative-caret-position="154">
+          <caret line="83" column="42" lean-forward="true" selection-start-line="83" selection-start-column="42" selection-end-line="83" selection-end-column="42" />
           <folding />
         </state>
       </provider>

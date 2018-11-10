@@ -81,6 +81,7 @@ for index in range(1, 2000000):
             zzd_url = article['zzd_url']
             title = article['title']
             view_cnt = article['view_cnt']
+            print(f'{title}   {view_cnt}')
             if view_cnt > 50000:
                 # view_cnt = int(view_cnt / 10000)
                 driver.get(zzd_url)
