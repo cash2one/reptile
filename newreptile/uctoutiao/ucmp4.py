@@ -69,11 +69,11 @@ map = {'yingshi': video, 'qiche': qiche, 'yinyue': music, 'mengwu': mengwu,
 toutiao = {'video_funny': kaiyan,'video_entertainment': mingxing, 'video_life': life, }
 
 
-path = makedirs('uc', 'Goman')
+# path = makedirs('uc', 'Goman')
 
 driver = webdriver.Chrome()
-db = getdb()
-for index in range(1, 20000):
+# db = getdb()
+for index in range(1, 2000000):
     for k, v in toutiao.items():
         data = json.loads(requests.get(v).content.decode('utf-8'))['data']
         items = data['items']
@@ -82,7 +82,7 @@ for index in range(1, 20000):
             zzd_url = article['zzd_url']
             title = article['title']
             view_cnt = article['view_cnt']
-            if view_cnt > 100000:
+            if view_cnt > 50000:
                 # view_cnt = int(view_cnt / 10000)
                 driver.get(zzd_url)
                 time.sleep(3)
@@ -103,5 +103,7 @@ for index in range(1, 20000):
                     #         source='uctoutiao')
                 except Exception as e:
                     print(e)
+        print(f'UC视频    爬虫 {k} 类型完成')
+    time.sleep(2*60*60)
     print(f'UC视频    爬虫第 {index} 页完成')
-closedb(db)
+# closedb(db)
