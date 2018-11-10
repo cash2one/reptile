@@ -1,8 +1,7 @@
 #!/usr/bin/env python
 # encoding: utf-8
-#   @file: new1.py
-#   @Created by shucheng.qu on 2018/10/24
-import json
+#   @file: detail1.py
+#   @Created by shucheng.qu on 2018/10/30
 
 # +------------------+---------------+------+-----+---------+----------------+
 # | Field            | Type          | Null | Key | Default | Extra          |
@@ -23,58 +22,45 @@ import json
 # | news_source      | varchar(45)   | YES  |     | NULL    |                |
 # | system_time      | bigint(20)    | YES  |     | NULL    |                |
 # +------------------+---------------+------+-----+---------+----------------+
-import time
+import json
 
 from api.error import error1, error2
-from db.dbbean import NewsBean
 from db.mysql import getdb
 
 
-
-def news1_result(q):
+def detail1_result(q):
     if q == None or q == '':
         return error2
     db = getdb()
     try:
         loads = json.loads(q)
-        size = 20
-        day = 7
-        if 'size' in loads:
-            size = int(loads['size'])
-            if size > 100:
-                size = 100
-        if 'day' in loads:
-            day = int(loads['day'])
-            if day > 10:
-                day = 10
-        mintime = day * 24 * 60 * 60 * 1000
-        sql = 'SELECT news_id,news_title,news_cover,news_author FROM news WHERE RAND()<=0.01 and system_time > ((select max(system_time) from news) - %s) order by rand() limit %s ;'
-        cursor = db.cursor()
-        db.ping()
-        cursor.execute(sql, ( mintime, size))
-        fetchall = cursor.fetchall()
-        data = []
-        for item in fetchall:
+        if 'id' in loads:
+            sql = 'SELECT news_title,news_content,news_author,news_author_img,news_data FROM news WHERE news_id = %s ;'
+            cursor = db.cursor()
+            db.ping()
+            cursor.execute(sql, (loads['id']))
+            fetch = cursor.fetchone()
             bean = {}
-            bean['id'] = item[0]
-            bean['title'] = item[1]
-            temp = str(item[2])
-            split = temp.split(';')
-            img = []
-            if len(split)>0:
+            bean['title'] = fetch[0]
+            temp = str(fetch[1])
+            split = temp.split('\n')
+            content = []
+            if len(split) > 0:
                 for ii in split:
-                    if len(ii) >0:
-                        img.append(ii)
-            bean['cover'] = img
-            bean['author'] = item[3]
-            data.append(bean)
-        return json.dumps({'code': 0, 'data': data})
+                    if len(ii) > 0:
+                        content.append(ii)
+            bean['content'] = content
+            bean['author'] = fetch[2]
+            bean['author_img'] = fetch[3]
+            bean['data'] = fetch[4]
+            return json.dumps({'code': 0, 'data': bean})
+        else:
+            return error2
     except Exception as e:
         print(e)
         return error1
     finally:
         db.close()
-
 
 if __name__ == '__main__':
     # news1_result('{"key":"234"}')

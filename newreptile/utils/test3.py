@@ -6,5 +6,6 @@ import time
 
 from newreptile.utils.test2 import sleeps
 
-print('jhdsufjkds')
-print(int(round(time.time() * 1000)))
+from newreptile.utils.save import times
+
+print(times)

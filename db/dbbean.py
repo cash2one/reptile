@@ -25,6 +25,7 @@
 
 # type gaoxiao keji tiyu yule lishi junshi sannong meishi qiwen qiche xinlixue youxi redian
 class NewsBean:
+    news_id = 0
     news_title = ''
     news_content = ''
     news_intro = ''

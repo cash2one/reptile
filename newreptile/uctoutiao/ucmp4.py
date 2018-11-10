@@ -40,7 +40,7 @@ zongyi = 'http://iflow.uczzd.cn/iflow/api/v1/channel/10198?app=ucnews-iflow&reco
 # 萌物
 mengwu = 'http://iflow.uczzd.cn/iflow/api/v1/channel/622485153?app=ucnews-iflow&recoid=9889764153493293010&ftime=1538793700672&method=new&count=20&no_op=0&auto=0&content_ratio=0&_tm=1539482996643&sign=Kvhw7CRaMnHxyNVgIKVwyy7nLKc8zMAcZfbIDxYIujeZp%2Fhi%2FCA%2F22%2BC0UplImy8pQA%3D&sc=&puser=1&tab=video&uicid=KviA1sVwSNVrHokKYAqzFNDW0%2BSnKSS5ZikBmQpl1U6MAYtvvwpN6PjEF1CKJtvjZJs%3D&uc_param_str=dnnivebichfrmintcpgieiwidsudsvadmeprpf&dn=37016348931-02193660&nn=KvmoP3iY%2fiscv2pyDTljVgW9aWBGHs%2bn5J33OFV%2beQavPQ%3d%3d&ve=3.9.2.392&bi=997&ch=&fr=iphone&mi=iPhone9%2c2&nt=2&pc=KvmV1x3IdVeVUcW4KYHoQ%2f0%2b4%2bELgX3j0LxeHwNQoGBLaEFyhqeiySP3D2pMuhpGaAs%3d&gp=KvmCqv%2fPJN8tcyDic%2bCU4WMjdEY2LbFQyk1U%2bGxpcj1sYA%3d%3d&me=KvlA4a0OFmlREej9Uhw8RvIHvr26EUScdveIfpXANTf%2fHRFc398pbEnFU%2bq9XS95Fso%3d&wf=&ut=KvnEckifrXQ3BPlsuBB1GgUgQEg%2bgWkB09rfM2unYZ3V%2bQ%3d%3d&ai=Kvk%3d&sv=app&ad=&pr=UCNewsApp&pf=195'
 # 开眼
-kaiyan = 'http://iflow.uczzd.cn/iflow/api/v1/channel/622777922?app=ucnews-iflow&recoid=8184489478308946897&ftime=1538838562346&method=new&count=20&no_op=0&auto=0&content_ratio=0&_tm=1539483044477&sign=KvhqibZC9sT3QZLE9X0%2FRHGjakzT9WWd5nXpm30w%2BbIA0dYO7ZqNFL%2Fsw0lxxIdIUd0%3D&sc=&puser=1&tab=video&uicid=KviA1sVwSNVrHokKYAqzFNDW0%2BSnKSS5ZikBmQpl1U6MAYtvvwpN6PjEF1CKJtvjZJs%3D&uc_param_str=dnnivebichfrmintcpgieiwidsudsvadmeprpf&dn=37016348931-02193660&nn=KvmoP3iY%2fiscv2pyDTljVgW9aWBGHs%2bn5J33OFV%2beQavPQ%3d%3d&ve=3.9.2.392&bi=997&ch=&fr=iphone&mi=iPhone9%2c2&nt=2&pc=KvmV1x3IdVeVUcW4KYHoQ%2f0%2b4%2bELgX3j0LxeHwNQoGBLaEFyhqeiySP3D2pMuhpGaAs%3d&gp=KvmCqv%2fPJN8tcyDic%2bCU4WMjdEY2LbFQyk1U%2bGxpcj1sYA%3d%3d&me=KvlA4a0OFmlREej9Uhw8RvIHvr26EUScdveIfpXANTf%2fHRFc398pbEnFU%2bq9XS95Fso%3d&wf=&ut=KvnEckifrXQ3BPlsuBB1GgUgQEg%2bgWkB09rfM2unYZ3V%2bQ%3d%3d&ai=Kvk%3d&sv=app&ad=&pr=UCNewsApp&pf=195'
+kaiyan = 'http://iflow.uczzd.cn/iflow/api/v1/channel/622777922?app=ucnews-iflow&recoid=17729968027590137347&ftime=1541860334066&method=new&count=20&no_op=0&auto=0&content_ratio=0&_tm=1541860354595&sign=Kvh8x2lNPG3FJ31tjGaqgcIs28hu%2BGTolGVy7ynXwlwIXDskmMgSj2nCyWruHmlg73A%3D&sc=&tab=video&uicid=KviA1sVwSNVrHokKYAqzFNDW0%2BSnKSS5ZikBmQpl1U6MAYtvvwpN6PjEF1CKJtvjZJs%3D&uc_param_str=dnnivebichfrmintcpgieiwidsudsvadmeprpf&dn=37016348931-02193660&nn=KvmoP3iY%2fiscv2pyDTljVgW9aWBGHs%2bn5J33OFV%2beQavPQ%3d%3d&ve=3.9.4.394&bi=997&ch=&fr=iphone&mi=iPhone9%2c2&nt=2&pc=KvmV1x3IdVeVUcW4KYHoQ%2f0%2b4%2bELgX3j0LxeHwNQoGBLaEFyhqeiySP3D2pMuhpGaAs%3d&gp=KvmbnjTrkDHXbdAndlJX9F5r%2bsNehXRMrj206SuPgwKZiA%3d%3d&me=KvlA4a0OFmlREej9Uhw8RvIHvr26EUScdveIfpXANTf%2fHRFc398pbEnFU%2bq9XS95Fso%3d&wf=&ut=KvnEckifrXQ3BPlsuBB1GgUgQEg%2bgWkB09rfM2unYZ3V%2bQ%3d%3d&ai=Kvk%3d&sv=app&ad=&pr=UCNewsApp&pf=195'
 # 体育
 tiyu = 'http://iflow.uczzd.cn/iflow/api/v1/channel/10050?app=ucnews-iflow&recoid=&ftime=&method=new&count=20&no_op=0&auto=0&content_ratio=0&_tm=1539483078368&sign=Kvjjl8rYc7aTYQfeGF69KcYdUlkaiQthzuOHe0xPG%2FvgUm%2Fms6%2FTsy4gXr6H8kqftoM%3D&sc=&puser=1&tab=video&uicid=KviA1sVwSNVrHokKYAqzFNDW0%2BSnKSS5ZikBmQpl1U6MAYtvvwpN6PjEF1CKJtvjZJs%3D&uc_param_str=dnnivebichfrmintcpgieiwidsudsvadmeprpf&dn=37016348931-02193660&nn=KvmoP3iY%2fiscv2pyDTljVgW9aWBGHs%2bn5J33OFV%2beQavPQ%3d%3d&ve=3.9.2.392&bi=997&ch=&fr=iphone&mi=iPhone9%2c2&nt=2&pc=KvmV1x3IdVeVUcW4KYHoQ%2f0%2b4%2bELgX3j0LxeHwNQoGBLaEFyhqeiySP3D2pMuhpGaAs%3d&gp=KvmCqv%2fPJN8tcyDic%2bCU4WMjdEY2LbFQyk1U%2bGxpcj1sYA%3d%3d&me=KvlA4a0OFmlREej9Uhw8RvIHvr26EUScdveIfpXANTf%2fHRFc398pbEnFU%2bq9XS95Fso%3d&wf=&ut=KvnEckifrXQ3BPlsuBB1GgUgQEg%2bgWkB09rfM2unYZ3V%2bQ%3d%3d&ai=Kvk%3d&sv=app&ad=&pr=UCNewsApp&pf=195'
 # 汽车
@@ -58,9 +58,16 @@ mingxing = 'http://iflow.uczzd.cn/iflow/api/v1/channel/622726317?app=ucnews-iflo
 # 科技
 keji = 'http://iflow.uczzd.cn/iflow/api/v1/channel/10030?app=ucnews-iflow&recoid=12532911498249819381&ftime=1538791799754&method=new&count=20&no_op=0&auto=0&content_ratio=0&_tm=1539483273797&sign=Kvjenmhzjy0n%2BZHgBdCTcUnSqd2ReftnUCZxt%2FPBNsK%2BCb4R%2BQjPIpwSE3ompIsEPw0%3D&sc=&puser=1&tab=video&uicid=KviA1sVwSNVrHokKYAqzFNDW0%2BSnKSS5ZikBmQpl1U6MAYtvvwpN6PjEF1CKJtvjZJs%3D&uc_param_str=dnnivebichfrmintcpgieiwidsudsvadmeprpf&dn=37016348931-02193660&nn=KvmoP3iY%2fiscv2pyDTljVgW9aWBGHs%2bn5J33OFV%2beQavPQ%3d%3d&ve=3.9.2.392&bi=997&ch=&fr=iphone&mi=iPhone9%2c2&nt=2&pc=KvmV1x3IdVeVUcW4KYHoQ%2f0%2b4%2bELgX3j0LxeHwNQoGBLaEFyhqeiySP3D2pMuhpGaAs%3d&gp=KvmCqv%2fPJN8tcyDic%2bCU4WMjdEY2LbFQyk1U%2bGxpcj1sYA%3d%3d&me=KvlA4a0OFmlREej9Uhw8RvIHvr26EUScdveIfpXANTf%2fHRFc398pbEnFU%2bq9XS95Fso%3d&wf=&ut=KvnEckifrXQ3BPlsuBB1GgUgQEg%2bgWkB09rfM2unYZ3V%2bQ%3d%3d&ai=Kvk%3d&sv=app&ad=&pr=UCNewsApp&pf=195'
 
-toutiao = {'yingshi': video, 'qiche': qiche, 'yinyue': music, 'mengwu': mengwu,
+map = {'yingshi': video, 'qiche': qiche, 'yinyue': music, 'mengwu': mengwu,
            'tiyu': tiyu,
            'youxi': game, 'yule': mingxing, 'shenghuo': life, 'keji': keji, }
+
+# toutiao = {'video_film': video, 'video_vehicles': qiche, 'video_music': music, 'video_animals': mengwu,
+#            'video_sports': tiyu,
+#            'video_gaming': game, 'video_entertainment': mingxing, 'video_life': life, 'video_tech': keji, }
+
+toutiao = {'video_funny': kaiyan,'video_entertainment': mingxing, 'video_life': life, }
+
 
 path = makedirs('uc', 'Goman')
 
@@ -75,7 +82,7 @@ for index in range(1, 20000):
             zzd_url = article['zzd_url']
             title = article['title']
             view_cnt = article['view_cnt']
-            if view_cnt > 10000:
+            if view_cnt > 100000:
                 # view_cnt = int(view_cnt / 10000)
                 driver.get(zzd_url)
                 time.sleep(3)
@@ -85,15 +92,15 @@ for index in range(1, 20000):
                     # name_path = f'{path}/{view_cnt}{title}.mp4'
                     # save(name_path, mp4_src)
                     # upload(name_path)
-                    # uploadBr(k, F'{title}.mp4', requests.get(mp4_src).content)
-                    md5 = hashlib.md5()
-                    md5.update(requests.get(mp4_src).content)
-                    md5 = md5.hexdigest()
-                    save_db(db, md5=md5, title=title, url=mp4_src, cover=article['thumbnails'][0]['url'], play=view_cnt,
-                            comment_url=article['cmt_url'], author=article['site_logo']['desc'],type=k,
-                            author_img=article['site_logo']['img']['url'],
-                            data=time.strftime("%Y/%m/%d %H:%M", time.localtime(int(article['grab_time']/1000))),
-                            source='uctoutiao')
+                    uploadBr(k, F'{title}.mp4', requests.get(mp4_src).content)
+                    # md5 = hashlib.md5()
+                    # md5.update(requests.get(mp4_src).content)
+                    # md5 = md5.hexdigest()
+                    # save_db(db, md5=md5, title=title, url=mp4_src, cover=article['thumbnails'][0]['url'], play=view_cnt,
+                    #         comment_url=article['cmt_url'], author=article['site_logo']['desc'],type=k,
+                    #         author_img=article['site_logo']['img']['url'],
+                    #         data=time.strftime("%Y/%m/%d %H:%M", time.localtime(int(article['grab_time']/1000))),
+                    #         source='uctoutiao')
                 except Exception as e:
                     print(e)
     print(f'UC视频    爬虫第 {index} 页完成')
