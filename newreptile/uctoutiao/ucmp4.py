@@ -82,30 +82,30 @@ for index in range(1, 2000000):
             title = article['title']
             view_cnt = article['view_cnt']
             print(f'{title}   {view_cnt}')
-            if view_cnt > 50000:
-                # view_cnt = int(view_cnt / 10000)
-                driver.get(zzd_url)
-                time.sleep(3)
-                try:
-                    mp4_src = driver.find_elements_by_xpath('.//video')[0].get_attribute('src')
-                    print(f'{title}   {view_cnt}    {mp4_src}')
-                    # name_path = f'{path}/{view_cnt}{title}.mp4'
-                    # save(name_path, mp4_src)
-                    # upload(name_path)
-                    uploadBr(k, F'{title}.mp4', requests.get(mp4_src).content)
-                    # md5 = hashlib.md5()
-                    # md5.update(requests.get(mp4_src).content)
-                    # md5 = md5.hexdigest()
-                    # save_db(db, md5=md5, title=title, url=mp4_src, cover=article['thumbnails'][0]['url'], play=view_cnt,
-                    #         comment_url=article['cmt_url'], author=article['site_logo']['desc'],type=k,
-                    #         author_img=article['site_logo']['img']['url'],
-                    #         data=time.strftime("%Y/%m/%d %H:%M", time.localtime(int(article['grab_time']/1000))),
-                    #         source='uctoutiao')
-                    time.sleep(5)
-                except Exception as e:
-                    print(e)
+            # if view_cnt > 50000:
+            # view_cnt = int(view_cnt / 10000)
+            driver.get(zzd_url)
+            time.sleep(3)
+            try:
+                mp4_src = driver.find_elements_by_xpath('.//video')[0].get_attribute('src')
+                print(f'{title}   {view_cnt}    {mp4_src}')
+                # name_path = f'{path}/{view_cnt}{title}.mp4'
+                # save(name_path, mp4_src)
+                # upload(name_path)
+                uploadBr(k, F'{title}.mp4', requests.get(mp4_src).content)
+                # md5 = hashlib.md5()
+                # md5.update(requests.get(mp4_src).content)
+                # md5 = md5.hexdigest()
+                # save_db(db, md5=md5, title=title, url=mp4_src, cover=article['thumbnails'][0]['url'], play=view_cnt,
+                #         comment_url=article['cmt_url'], author=article['site_logo']['desc'],type=k,
+                #         author_img=article['site_logo']['img']['url'],
+                #         data=time.strftime("%Y/%m/%d %H:%M", time.localtime(int(article['grab_time']/1000))),
+                #         source='uctoutiao')
+                time.sleep(5)
+            except Exception as e:
+                print(e)
         print(f'UC视频    爬虫 {k} 类型完成')
-    if index % 5 == 0:
-        time.sleep(2 * 60 * 60)
     print(f'UC视频    爬虫第 {index} 页完成')
+    if index % 5 == 0:
+        time.sleep(3 * 60 * 60)
 # closedb(db)
