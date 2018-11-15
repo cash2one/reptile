@@ -9,12 +9,6 @@ import requests
 import time
 from lxml import etree
 
-
-proxy_dict = {
-    "http": "http://username:password@hogehoge.proxy.jp:8080/",
-    "https": "http://username:password@hogehoge.proxy.jp:8080/"
-}
-
 def getProxy():
     ips = []
     for index in range(1, 100):#每页15个
@@ -42,4 +36,5 @@ def request():
 
 # proxies= {"http": 'http://112.95.206.74:8888'}
 # print(requests.get('http://yh.mj70.cn/?id=917361050',proxies=proxies).content)
-request()
+for index in range(0,10):
+    request()
