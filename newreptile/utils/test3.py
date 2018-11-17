@@ -4,8 +4,13 @@
 #   @Created by shuchengqu on 18-10-10
 import time
 
-from newreptile.utils.test2 import sleeps
 
-from newreptile.utils.save import times
 
-print(times)
+
+def fff(ff = 'ddd',**kwargs):
+    print(kwargs)
+
+# 1542438561355
+# 1542438813684
+# 1542438784
+print(int(round(time.time()*1000)))

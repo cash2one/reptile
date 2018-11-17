@@ -20,6 +20,7 @@ def getProxy():
             port = tr.xpath('./td[2]/text()')[0]
             proxy_ip = F'http://{ip}:{port}'
             ips.append(proxy_ip)
+            print(proxy_ip)
         time.sleep(2)
     return ips
 
