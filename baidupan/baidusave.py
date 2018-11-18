@@ -15,6 +15,7 @@ import time
 import base64
 import sys
 from urllib.parse import quote
+from urllib.parse import unquote
 
 sys.setrecursionlimit(1000000)  # 例如这里设置为一百万
 
@@ -88,8 +89,8 @@ def all_file(url, file={}, type=''):
 
 
 def file_get(url, retry=0):
-    shareFile = requests.get(url, headers=share_header, verify=False).content.decode('utf-8')
-    time.sleep(1)
+    shareFile = requests.get(url, headers=share_header,verify=False).content.decode('utf-8')
+    print(shareFile)
     shareFile = shareFile[shareFile.index('{'):len(shareFile)]
     loads = json.loads(shareFile)
     if loads['errno'] != 0:
@@ -102,9 +103,10 @@ def file_get(url, retry=0):
 
 def create_path(path, retry=0):
     create_url = F'https://pan.baidu.com/api/create?a=commit&channel=chunlei&web=1&app_id={app_id}&bdstoken={bdstoken}&logid={str(base64.b64encode(str(time.time()*10000).encode("utf-8")),"utf-8")}&clienttype=0'
-    param = {'path': path, 'isdir': '1', 'block_list': []}
-    result = requests.post(create_url, data=param, headers=create_header, verify=False).content.decode('utf-8')
-    time.sleep(1)
+    param = {'path': unquote(path), 'isdir': '1', 'block_list': []}
+    result = requests.post(create_url, data=param, headers=create_header,verify=False).content.decode('utf-8')
+    result = result[result.index('{'):len(result)]
+    print(result)
     if json.loads(result)['errno'] != 0:
         retry += 1
         if retry > 10:
@@ -116,13 +118,13 @@ def transfer_file(path, fsid, type='', retry=0):
     if type == 'private':
         url = F'https://pan.baidu.com/mbox/msg/transfer?bdstoken={bdstoken}&channel=chunlei&web=1&app_id={app_id}&logid={str(base64.b64encode(str(time.time()*10000).encode("utf-8")),"utf-8")}&clienttype=0'
         param = {'from_uk': from_uk, 'to_uk': to_uk, 'msg_id': msg_id, 'ondup': 'newcopy', 'async': '1', 'type': '1',
-                 'fs_ids': F'[{fsid}]', 'path': path}
+                 'fs_ids': F'[{fsid}]', 'path': unquote(path)}
     else:
         url = F'https://pan.baidu.com/share/transfer?shareid={shareid}&from={from_uk}&ondup=newcopy&async=1&channel=chunlei&web=1&app_id={app_id}&bdstoken={bdstoken}&logid={str(base64.b64encode(str(time.time()*10000).encode("utf-8")),"utf-8")}&clienttype=0'
-        param = {'fsidlist': F'[{fsid}]', 'path': path}
-    result = requests.post(url, data=param, headers=create_header, verify=False).content.decode('utf-8')
-    time.sleep(1)
+        param = {'fsidlist': F'[{fsid}]', 'path': unquote(path)}
+    result = requests.post(url, data=param, headers=create_header,verify=False).content.decode('utf-8')
     print(result)
+    result = result[result.index('{'):len(result)]
     if json.loads(result)['errno'] != 0:
         retry += 1
         if retry > 10:
@@ -133,18 +135,18 @@ def transfer_file(path, fsid, type='', retry=0):
 
 
 def transfer(share={}, my={}, type=''):
+    temp = False
+    file_name = share['fileName']
+    for sub in my['subFile']:
+        if sub['fileName'] == file_name:
+            temp = True
+            break
     if share['isdir']:
-        file_name = share['fileName']
-        temp = False
-        for sub in my['subFile']:
-            if sub['fileName'] == file_name:
-                temp = True
-                break
         if not temp:
             create_path(F"{my['filePath']}/{file_name}")
             subFile = {'subFile': []}
             subFile['fileName'] = file_name
-            subFile['filePath'] = F"{my['filePath']}{file_name}/"
+            subFile['filePath'] = F"{my['filePath']}/{file_name}"
             subFile['isdir'] = True
             my['subFile'].append(subFile)
         for sub in share['subFile']:
@@ -153,7 +155,8 @@ def transfer(share={}, my={}, type=''):
                     transfer(sub, msub, type)
                     break
     else:
-        transfer_file(my['filePath'], share['fs_id'], type)
+        if not temp:
+            transfer_file(my['filePath'], share['fs_id'], type)
 
 
 # share_map = shareMap({'fileName': fileName, 'filePath': filePath, 'isdir': True, 'subFile': []})
