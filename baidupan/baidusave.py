@@ -151,6 +151,7 @@ def transfer_file(path, fsid, type='', retry=0):
         retry += 1
         if retry > 5:
             return
+        time.sleep(2)
         transfer_file(path, fsid, type, retry)
     result = result[result.index('{'):len(result)]
     if json.loads(result)['errno'] != 0:
