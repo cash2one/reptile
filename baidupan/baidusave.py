@@ -205,7 +205,22 @@ fromFileName = '2019全程备考包'
 fromFilePath = '/我的资源/2019全程备考包'
 fs_id = '386526453858121'
 
-def priFileTrans():
+def dog2yuanyuan():
+    global bdstoken
+    bdstoken  = 'eb003277cc71a9106d0c9cb60278d212'
+    global msg_id
+    msg_id = '3350045725085442145'
+    global from_uk
+    from_uk = '2498556534'
+    global to_uk
+    to_uk = '2446011831'
+    global fromFileName
+    fromFileName = '2019全程备考包'
+    global fromFilePath
+    fromFilePath = '/我的资源/2019全程备考包'
+    global fs_id
+    fs_id = '386526453858121'
+
     from_thread = ResultThread(name='来源线程',target=privateMap,args={'fileName': fromFileName, 'filePath': quote(fromFilePath), 'isdir': True, 'fs_id': fs_id, 'subFile': []})
     from_thread.setDaemon(True)
     from_thread.start()
@@ -217,7 +232,38 @@ def priFileTrans():
     to_map = to_thread.join()
     transfer(from_map, to_map, 'private')
 
-priFileTrans()
+
+def yuanyuan2cheng():
+    global bdstoken
+    bdstoken  = '534bb376d644a53893feeb4e90b90995'
+    global msg_id
+    msg_id = '3203891808936306492'
+    global from_uk
+    from_uk = '2446011831'
+    global to_uk
+    to_uk = '69945798'
+    global fromFileName
+    fromFileName = '2019全程备考包'
+    global fromFilePath
+    fromFilePath = '/2019全程备考包'
+    global fs_id
+    fs_id = '189772267224403'
+
+    from_thread = ResultThread(name='来源线程',target=privateMap,args={'fileName': fromFileName, 'filePath': quote(fromFilePath), 'isdir': True, 'fs_id': fs_id, 'subFile': []})
+    from_thread.setDaemon(True)
+    from_thread.start()
+    to_thread = ResultThread(name='我的线程',target=myMap,args={'fileName': toFileName, 'filePath': quote(toFilePath), 'isdir': True, 'subFile': []})
+    to_thread.setDaemon(True)
+    to_thread.start()
+
+    from_map = from_thread.join()
+    to_map = to_thread.join()
+    transfer(from_map, to_map, 'private')
+
+yuanyuan2cheng()
+
+
+# https://pan.baidu.com/mbox/msg/shareinfo?msg_id=3203891808936306492&page=1&from_uk=2446011831&to_uk=69945798&type=1&fs_id=189772267224403&num=50&bdstoken=534bb376d644a53893feeb4e90b90995&channel=chunlei&web=1&app_id=250528&logid=MTU0Mjc2MzQyOTI3NjAuNTMwODE0MzQ2Njg0ODU2Mw==&clienttype=0
 
 # print(json.dumps(myMap({'fileName': '', 'filePath': '/', 'isdir': True, 'subFile': []})))
 # print(create_path('/这个是测试目录'))
