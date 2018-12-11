@@ -21,8 +21,7 @@ from baidupan.ResultThread import ResultThread
 
 sys.setrecursionlimit(1000000)  # 例如这里设置为一百万
 
-yuan17636 = 'BIDUPSID=DC7BBC3BF80F0B4D394DD93F2BB79D54; PSTM=1481187061; panlogin_animate_showed=1; bdshare_firstime=1492834081929; PANWEB=1; __cfduid=d883c5690f8d164a8ffb5fc98785afea01532575554; MCITY=-%3A; BAIDUID=6EF572039DBDE67795CA0B1D3B168F3D:FG=1; H_PS_PSSID=; Hm_lvt_7a3960b6f067eb0085b7f96ff5e660b0=1541948594,1542013530,1542180545,1542246294; Hm_lvt_407473d433e871de861cf818aa1405a1=1541948611,1542013539,1542180550,1542246299; BDCLND=pRaLQnlGJqNsvwZAKqL2EH7DRGrpwmco; delPer=0; PSINO=1; cflag=15%3A3; BDRCVFR[92PNfpaJZ0Y]=9xWipS8B-FspA7EnHc1QhPEUf; BDUSS=0gzM0h0Q1Z2ak9FenVScUZwUkh-eWhSSHlHNTVCWGZ-Nm5VVnM1bkN3WUlKQmRjQVFBQUFBJCQAAAAAAAAAAAEAAABjkWjP1LW31rPJzqrO0sPHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAiX71sIl-9bT; STOKEN=c8082eeecc1494189cfd4cc15a0a8236254ecbcbaec36e186c601dbec4a20897; SCRC=fe4c967d0a71f9a47ee5058a406cf0cf; Hm_lpvt_7a3960b6f067eb0085b7f96ff5e660b0=1542431997; Hm_lpvt_407473d433e871de861cf818aa1405a1=1542432003; BDRCVFR[jFeE7wK4p0D]=9xWipS8B-FspA7EnHc1QhPEUf; PANPSC=9211934974791907903%3AZjFd1PuLJ%2BAaQ5XmsatCaOn90oj%2BY%2FIsHJlweUJ02t1m1RVC%2Fg0eFdN%2Fz3Y2D0lvoJhNDqeencuFv6WU4Zl3wBOAD5r1J1nb%2B6ivvb20zlSjJmZCwYXPzsv%2BltDwt9lVNIE1TQmpy4bYFdTZP%2BpAvCtY6oDerc8JwO6IUlyEdXI5u4Owi7HyOET6EtWQMy2KSSzrHYofj1Q%3D'
-qu15380 = 'BIDUPSID=DC7BBC3BF80F0B4D394DD93F2BB79D54; PSTM=1481187061; panlogin_animate_showed=1; bdshare_firstime=1492834081929; PANWEB=1; __cfduid=d883c5690f8d164a8ffb5fc98785afea01532575554; MCITY=-%3A; BAIDUID=6EF572039DBDE67795CA0B1D3B168F3D:FG=1; BDUSS=VxdH5wcU5LNFlELUVUY0I5WnRiOTZkSlZLd2tlZGJQeFItaXg2OXhSQmY3TmRiQUFBQUFBJCQAAAAAAAAAAAEAAAAHBBkv0KHR-cTju7nMq8TbAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF9fsFtfX7BbOH; SCRC=65c922f050032feda5c5c729a7ef0491; H_PS_PSSID=; Hm_lvt_7a3960b6f067eb0085b7f96ff5e660b0=1541948594,1542013530,1542180545,1542246294; Hm_lvt_407473d433e871de861cf818aa1405a1=1541948611,1542013539,1542180550,1542246299; BDCLND=Oclth5FfAbzXUX6tTlln03RxwXA6SBpy7yF%2FbLzUCrE%3D; STOKEN=e5b72022faf19e1a900bbdb45dad5bbee5bc8ba329506f79e421cd3d02e5198e; delPer=0; PSINO=2; cflag=15%3A3; Hm_lpvt_407473d433e871de861cf818aa1405a1=1542353652; PANPSC=17218965739127024165%3AM3%2Fm2%2F8VCaBbxK%2FYR74R10vCu2t54Rp4tNz8gfJx91ehClz94JG8KvkEtsZJBi2OtwQSqriNDotQXOzmXp7MaHgXofrWESI40Kx5odaStsWXc8ySyDMeokNCOFfstLl9CFXShhl2gVitUq%2FdzxBw4g%2BV45jZmyoa%2F1txkewJEk0nih65clERtryHDAnhPhMz5dNt%2BsRbU69UMSLhYBPCxc5TMpqnKCFM; Hm_lpvt_7a3960b6f067eb0085b7f96ff5e660b0=1542353829'
+cookie = ''
 share_header = {
     'Connection': 'keep-alive',
     'Accept': 'application/json, text/javascript, */*; q=0.01',
@@ -30,7 +29,7 @@ share_header = {
     'Referer': 'https://pan.baidu.com/disk/home',
     'Accept-Encoding': 'gzip, deflate, br',
     'Accept-Language': 'zh-CN,zh;q=0.9',
-    'Cookie': yuan17636}
+    'Cookie': cookie}
 
 create_header = {
     'Connection': 'keep-alive',
@@ -42,22 +41,23 @@ create_header = {
     'Referer': 'https://pan.baidu.com/disk/home',
     'Accept-Encoding': 'gzip, deflate, br',
     'Accept-Language': 'zh-CN,zh;q=0.9',
-    'Cookie': yuan17636}
-
+    'Cookie': cookie}
 
 
 def net_post(url, data=None, json=None, **kwargs):
     print(unquote(url))
     print(data)
-    result =  requests.post(url, data=data, headers=create_header).content.decode('utf-8')
+    result = requests.post(url, data=data, headers=create_header, verify=False).content.decode('utf-8')
     print(result)
     return result
 
+
 def net_get(url, params=None, **kwargs):
     print(unquote(url))
-    result = requests.get(url, headers=share_header).content.decode('utf-8')
+    result = requests.get(url, headers=share_header, verify=False).content.decode('utf-8')
     print(result)
     return result
+
 
 def shareMap(file={}):
     share_list = F'https://pan.baidu.com/share/list?uk={from_uk}&shareid={shareid}&order=other&desc=1&showempty=0&web=1&page=1&num=100&dir={file["filePath"]}&t={random.random()}&channel=chunlei&web=1&app_id={app_id}&bdstoken={bdstoken}&logid={str(base64.b64encode(str(time.time()*10000).encode("utf-8")),"utf-8")}&clienttype=0'
@@ -66,7 +66,6 @@ def shareMap(file={}):
 
 
 def myMap(file={}):
-    # my_list = F'https://pan.baidu.com/api/list?dir={file["filePath"]}&bdstoken={bdstoken}&logid={str(base64.b64encode(str(time.time()*10000).encode("utf-8")),"utf-8")}&num=100&order=time&desc=1&clienttype=0&showempty=0&web=1&page=1&channel=chunlei&web=1&app_id={app_id}'
     my_list = F'https://pan.baidu.com/api/list?order=time&desc=1&showempty=0&web=1&page=1&num=100&dir={file["filePath"]}&t={random.random()}&channel=chunlei&web=1&app_id={app_id}&bdstoken={bdstoken}&logid={str(base64.b64encode(str(time.time()*10000).encode("utf-8")),"utf-8")}&clienttype=0&startLogTime={int(round(time.time()*1000))}'
     all_file(my_list, file, 'my')
     return file
@@ -124,7 +123,7 @@ def file_get(url, retry=0):
 def create_path(path, retry=0):
     create_url = F'https://pan.baidu.com/api/create?a=commit&channel=chunlei&web=1&app_id={app_id}&bdstoken={bdstoken}&logid={str(base64.b64encode(str(time.time()*10000).encode("utf-8")),"utf-8")}&clienttype=0'
     param = {'path': unquote(path), 'isdir': '1', 'block_list': []}
-    result = net_post(create_url,data=param)
+    result = net_post(create_url, data=param)
     if len(result) < 2:
         retry += 1
         if retry > 5:
@@ -170,7 +169,7 @@ def transfer(share={}, my={}, type=''):
         if sub['fileName'] == file_name:
             temp = True
             break
-    if share['isdir']:
+    if share['isdir'] and str(file_name).find('kjdog') < 0:
         if not temp:
             create_path(F"{my['filePath']}/{file_name}")
             subFile = {'subFile': []}
@@ -178,19 +177,44 @@ def transfer(share={}, my={}, type=''):
             subFile['filePath'] = F"{my['filePath']}/{file_name}"
             subFile['isdir'] = True
             my['subFile'].append(subFile)
+        tsub = {}
+        for msub in my['subFile']:
+            if msub['fileName'] == file_name:
+                tsub = msub
+                break
         for sub in share['subFile']:
-            for msub in my['subFile']:
-                if msub['fileName'] == file_name:
-                    transfer(sub, msub, type)
-                    break
-    else:
+            transfer(sub, tsub, type)
+    elif not share['isdir'] and str(file_name).find('kjdog') < 0:
         if not temp:
             transfer_file(my['filePath'], share['fs_id'], type)
+    else:
+        print('会计狗狗广告')
 
 
-# share_map = shareMap({'fileName': fileName, 'filePath': filePath, 'isdir': True, 'subFile': []})
-# my_map = myMap({'fileName': '', 'filePath': '/', 'isdir': True, 'subFile': []})
-# transfer(share_map,my_map)
+def refresh_header():
+    global share_header
+    share_header = {
+        'Connection': 'keep-alive',
+        'Accept': 'application/json, text/javascript, */*; q=0.01',
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+        'Referer': 'https://pan.baidu.com/disk/home',
+        'Accept-Encoding': 'gzip, deflate, br',
+        'Accept-Language': 'zh-CN,zh;q=0.9',
+        'Cookie': cookie}
+
+    global create_header
+    create_header = {
+        'Connection': 'keep-alive',
+        'Accept': 'application/json, text/javascript, */*; q=0.01',
+        'Origin': 'https://pan.baidu.com',
+        'X-Requested-With': 'XMLHttpRequest',
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+        'Referer': 'https://pan.baidu.com/disk/home',
+        'Accept-Encoding': 'gzip, deflate, br',
+        'Accept-Language': 'zh-CN,zh;q=0.9',
+        'Cookie': cookie}
+
 
 toFileName = ''
 toFilePath = '/'
@@ -205,9 +229,12 @@ fromFileName = '2019全程备考包'
 fromFilePath = '/我的资源/2019全程备考包'
 fs_id = '386526453858121'
 
-def dog2yuanyuan():
+
+def d2y():
+    global cookie
+    cookie = 'BIDUPSID=DC7BBC3BF80F0B4D394DD93F2BB79D54; PSTM=1481187061; panlogin_animate_showed=1; bdshare_firstime=1492834081929; PANWEB=1; __cfduid=d883c5690f8d164a8ffb5fc98785afea01532575554; MCITY=-%3A; BAIDUID=6EF572039DBDE67795CA0B1D3B168F3D:FG=1; H_PS_PSSID=; Hm_lvt_7a3960b6f067eb0085b7f96ff5e660b0=1541948594,1542013530,1542180545,1542246294; Hm_lvt_407473d433e871de861cf818aa1405a1=1541948611,1542013539,1542180550,1542246299; BDCLND=pRaLQnlGJqNsvwZAKqL2EH7DRGrpwmco; delPer=0; PSINO=1; cflag=15%3A3; BDRCVFR[92PNfpaJZ0Y]=9xWipS8B-FspA7EnHc1QhPEUf; BDUSS=0gzM0h0Q1Z2ak9FenVScUZwUkh-eWhSSHlHNTVCWGZ-Nm5VVnM1bkN3WUlKQmRjQVFBQUFBJCQAAAAAAAAAAAEAAABjkWjP1LW31rPJzqrO0sPHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAiX71sIl-9bT; STOKEN=c8082eeecc1494189cfd4cc15a0a8236254ecbcbaec36e186c601dbec4a20897; SCRC=fe4c967d0a71f9a47ee5058a406cf0cf; Hm_lpvt_7a3960b6f067eb0085b7f96ff5e660b0=1542431997; Hm_lpvt_407473d433e871de861cf818aa1405a1=1542432003; BDRCVFR[jFeE7wK4p0D]=9xWipS8B-FspA7EnHc1QhPEUf; PANPSC=9211934974791907903%3AZjFd1PuLJ%2BAaQ5XmsatCaOn90oj%2BY%2FIsHJlweUJ02t1m1RVC%2Fg0eFdN%2Fz3Y2D0lvoJhNDqeencuFv6WU4Zl3wBOAD5r1J1nb%2B6ivvb20zlSjJmZCwYXPzsv%2BltDwt9lVNIE1TQmpy4bYFdTZP%2BpAvCtY6oDerc8JwO6IUlyEdXI5u4Owi7HyOET6EtWQMy2KSSzrHYofj1Q%3D'
     global bdstoken
-    bdstoken  = 'eb003277cc71a9106d0c9cb60278d212'
+    bdstoken = 'eb003277cc71a9106d0c9cb60278d212'
     global msg_id
     msg_id = '3350045725085442145'
     global from_uk
@@ -215,57 +242,60 @@ def dog2yuanyuan():
     global to_uk
     to_uk = '2446011831'
     global fromFileName
-    fromFileName = '2019全程备考包'
+    fromFileName = '2019初级职称'
     global fromFilePath
-    fromFilePath = '/我的资源/2019全程备考包'
+    fromFilePath = '/我的资源/2019全程备考包/2019初级职称'
     global fs_id
-    fs_id = '386526453858121'
-
-    from_thread = ResultThread(name='来源线程',target=privateMap,args={'fileName': fromFileName, 'filePath': quote(fromFilePath), 'isdir': True, 'fs_id': fs_id, 'subFile': []})
+    fs_id = '828080111320777'
+    refresh_header()
+    from_map = {'fileName': fromFileName, 'filePath': quote(fromFilePath), 'isdir': True, 'fs_id': fs_id, 'subFile': []}
+    from_thread = ResultThread(name='来源线程', target=privateMap, args=from_map)
     from_thread.setDaemon(True)
     from_thread.start()
-    to_thread = ResultThread(name='我的线程',target=myMap,args={'fileName': toFileName, 'filePath': quote(toFilePath), 'isdir': True, 'subFile': []})
+    to_map = {'fileName': toFileName, 'filePath': quote(toFilePath), 'isdir': True, 'subFile': []}
+    to_thread = ResultThread(name='我的线程', target=myMap, args=to_map)
     to_thread.setDaemon(True)
     to_thread.start()
 
-    from_map = from_thread.join()
-    to_map = to_thread.join()
+    from_thread.join()
+    to_thread.join()
+
     transfer(from_map, to_map, 'private')
 
 
-def yuanyuan2cheng():
+def y21():
+    global cookie
+    cookie = 'BIDUPSID=DC7BBC3BF80F0B4D394DD93F2BB79D54; PSTM=1481187061; panlogin_animate_showed=1; bdshare_firstime=1492834081929; PANWEB=1; __cfduid=d883c5690f8d164a8ffb5fc98785afea01532575554; BAIDUID=6EF572039DBDE67795CA0B1D3B168F3D:FG=1; MCITY=-332%3A; recommendTime=guanjia2018-12-3%2010%3A40%3A00; BDCLND=OmNRaxsh%2BtndVBHLIC1IKCkwudPWE5%2BtgiTav7qXkrY%3D; H_PS_PSSID=; Hm_lvt_7a3960b6f067eb0085b7f96ff5e660b0=1543912725,1544164837,1544173504,1544328791; Hm_lvt_407473d433e871de861cf818aa1405a1=1543901418,1544164844,1544173514,1544328797; delPer=0; PSINO=2; cflag=15%3A3; BDUSS=VzUU1ITFRhfjBBSjVpMUtRRTFCOVZTUEszMkdZSU9xNEpWVzgtN1JYZ2FmRFZjQVFBQUFBJCQAAAAAAAAAAAEAAACSAJzHuf7gtjIzNDU2tcS80gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABrvDVwa7w1ccU; STOKEN=cf740039fcb127c92ab233ad5d193f7866a20ce46dfd97c65319098d3ef98337; SCRC=cd71ed5a4323a80e4d7b4057bad4e589; Hm_lpvt_7a3960b6f067eb0085b7f96ff5e660b0=1544417055; PANPSC=8062411856976849230%3A5Us%2BCrpocqOKWrat4M8x7kvCu2t54Rp49SFoCO5trOtX8ZWcAfekebAEEJKb92oSDbk8E8gdDB%2BDOi2vRG4L0VLo%2FsO9TsywAJXi526GvO3eC2aLH2G6goSZYuWca%2FNU%2FPW39XmLfA94%2B2HacCA3yTsuktMw6gulbVFcNkn0FT5VvmSKYmKRhKQRuwhxVv30; Hm_lpvt_407473d433e871de861cf818aa1405a1=1544417061'
     global bdstoken
-    bdstoken  = '534bb376d644a53893feeb4e90b90995'
+    bdstoken = 'b520a4d0e971675398d8b7e74aa985c5'
     global msg_id
-    msg_id = '3203891808936306492'
+    msg_id = '885630743877066688'
     global from_uk
     from_uk = '2446011831'
     global to_uk
-    to_uk = '69945798'
+    to_uk = '12835907'
     global fromFileName
-    fromFileName = '2019全程备考包'
+    fromFileName = '2019初级职称'
     global fromFilePath
-    fromFilePath = '/2019全程备考包'
+    fromFilePath = '/2019初级职称'
     global fs_id
-    fs_id = '189772267224403'
-
-    from_thread = ResultThread(name='来源线程',target=privateMap,args={'fileName': fromFileName, 'filePath': quote(fromFilePath), 'isdir': True, 'fs_id': fs_id, 'subFile': []})
+    fs_id = '416989081489113'
+    refresh_header()
+    from_map = {'fileName': fromFileName, 'filePath': quote(fromFilePath), 'isdir': True, 'fs_id': fs_id, 'subFile': []}
+    from_thread = ResultThread(name='来源线程', target=privateMap, args=from_map)
     from_thread.setDaemon(True)
     from_thread.start()
-    to_thread = ResultThread(name='我的线程',target=myMap,args={'fileName': toFileName, 'filePath': quote(toFilePath), 'isdir': True, 'subFile': []})
+    to_map = {'fileName': toFileName, 'filePath': quote(toFilePath), 'isdir': True, 'subFile': []}
+    to_thread = ResultThread(name='我的线程', target=myMap, args=to_map)
     to_thread.setDaemon(True)
     to_thread.start()
 
-    from_map = from_thread.join()
-    to_map = to_thread.join()
+    from_thread.join()
+    to_thread.join()
+
     transfer(from_map, to_map, 'private')
 
-yuanyuan2cheng()
 
 
-# https://pan.baidu.com/mbox/msg/shareinfo?msg_id=3203891808936306492&page=1&from_uk=2446011831&to_uk=69945798&type=1&fs_id=189772267224403&num=50&bdstoken=534bb376d644a53893feeb4e90b90995&channel=chunlei&web=1&app_id=250528&logid=MTU0Mjc2MzQyOTI3NjAuNTMwODE0MzQ2Njg0ODU2Mw==&clienttype=0
-
-# print(json.dumps(myMap({'fileName': '', 'filePath': '/', 'isdir': True, 'subFile': []})))
-# print(create_path('/这个是测试目录'))
-
-# transfer_file('/','611687935140417')
+d2y()
+y21()

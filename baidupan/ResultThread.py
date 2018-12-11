@@ -15,14 +15,9 @@ class ResultThread(Thread):
         self._return = None
 
     def run(self):
-        try:
-            if self._target:
-                self._return = self._target(self._args)
-        finally:
-            # Avoid a refcycle if the thread is running a function with
-            # an argument that has a member that points to the thread.
-            del self._target, self._args, self._kwargs
+        if self._target:
+            self._return = self._target(self._args)
 
     def join(self, timeout=None):
-        Thread.join(self,timeout)
+        Thread.join(self, timeout)
         return self._return

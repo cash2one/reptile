@@ -65,8 +65,8 @@ map = {'yingshi': video, 'qiche': qiche, 'yinyue': music, 'mengwu': mengwu,
 # toutiao = {'video_film': video, 'video_vehicles': qiche, 'video_music': music, 'video_animals': mengwu,
 #            'video_sports': tiyu,
 #            'video_gaming': game, 'video_entertainment': mingxing, 'video_life': life, 'video_tech': keji, }
-
-toutiao = {'video_funny': kaiyan, 'video_entertainment': mingxing, 'video_life': life, }
+# 'video_entertainment': mingxing,
+toutiao = {'video_funny': kaiyan }
 
 # path = makedirs('uc', 'Goman')
 
@@ -107,5 +107,6 @@ for index in range(1, 2000000):
         print(f'UC视频    爬虫 {k} 类型完成')
     print(f'UC视频    爬虫第 {index} 页完成')
     if index % 5 == 0:
-        time.sleep(3 * 60 * 60)
+        time.sleep(0.5 * 60 * 60)
+driver.close()
 # closedb(db)

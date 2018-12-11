@@ -26,7 +26,7 @@ def getProxy():
 
 def request():
     ips = getProxy()
-    uu = 'http://yh.mj70.cn/?id=917361050'
+    uu = 'http://www.365yg.com/i6627000234452976131/#mid=1616756594149389'
     for ip in ips:
         try:
             proxies = {"http": ip}
